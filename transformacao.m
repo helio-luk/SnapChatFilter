@@ -1,16 +1,18 @@
-close all
-clear all
-clc
+function x = transformacao(imagemRosto, imagemFiltro, mascara, fixedPoints, movingPoints)
 
 % leitura das imagens
-ImgOrigH = imread('faceppteste.png');
-MapBWCat = imread('86537-olhos.png');
-ImgOrigG = imread('86537.jpg');
+ImgOrigH = imagemRosto; %imread('gatohelio.png');
+MapBWCat = mascara ;    %imread('gatoferor.png');
+ImgOrigG = imagemFiltro;%imread('gatofer.jpg');
 
 [l,c] = size(MapBWCat);
 
-% máscara
+% mï¿½scara
 Masc = ImgOrigG;
+x = MapBWCat;
+
+H = fspecial('average',5);
+Masc = imfilter(Masc, H);
 
 for i = 1:l
     for j = 1:c
@@ -20,14 +22,17 @@ for i = 1:l
     end
 end
 
-% landmarks do rosto humano
-fixedPoints  = [38 48; 38 46; 34 47; 38 46; 32 47; 38 45; 30 43; 42 42; 41 63; 50 70; 50 66; 59 61; 50 63; 49 62; 43 57; 54 56; 48 56; 57 45; 57 44; 53 46; 57 44; 61 44; 56 43; 51 41; 63 39];
+se = strel('disk', 4);
+Masc = imdilate(Masc, se);
 
-% landmarks do gato
-movingPoints = [2059 1302; 2058 1227; 1967 1192; 2058 1227; 2146 1281; 2061 1168; 1926 1148; 2150 1190; 2159 1577; 2284 1617; 2284 1585; 2439 1576; 2284 1572; 2284 1535; 2202 1456; 2352 1449; 2278 1451; 2487 1261; 2468 1197; 2368 1272; 2468 1197; 2547 1154; 2450 1144; 2366 1173; 2551 1105];
+%fixedPoints = [194   172; 266   163;365   164;438   182;];
+%movingPoints = [154   355; 289   322;  559   319;  679   331];
 
-tform = fitgeotrans(movingPoints,fixedPoints,'lwm',10);
 
+    
+%tform = fitgeotrans(movingPoints,fixedPoints,'lwm',6);
+tform = fitgeotrans(movingPoints,fixedPoints,'NonreflectiveSimilarity');
+%tform = fitgeotrans(movingPoints,fixedPoints,'pwl');
 ajuste = imwarp(Masc,tform,'OutputView',imref2d(size(ImgOrigH)));
 
 final = zeros(size(ImgOrigH));
@@ -45,5 +50,7 @@ for i = 1:l
 end
 
 final = uint8(final);
+
+imwrite(final, 'gatohelio2.png');
 
 imshow(final);

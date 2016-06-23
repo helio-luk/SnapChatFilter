@@ -1,0 +1,45 @@
+-------------------------------------------------FIXEDPOINTS------------------------------------------------------------------
+
+landmarks da japonesa para focinho gato
+fixedPoints  = [120   177; 277   158; 163   308;  282   299]; 
+
+landmark da japonesa para o chapeuzinho gato3
+fixedPoints  = [31 162;190 132;363 110;322 23;198 0;74  26]; 
+
+landmark helio com focinho, fitgeotrans normal
+fixedPoints  = [%255   361  %341   359   %296   316   %299   409 || 260   341 333   336  296   301  296   380]; 
+
+landmark helio com orelha, gatoFernanda
+fixedPoints = [194   172; 266   163;365   164;438   182;];
+
+landmark helio focinho GatoRoberta2
+fixedPoints=[249   386;338   385;290   341; 294   428];
+
+
+
+
+------------------------------------------------------MOVINGPOINTS-----------------------------------------------------------------
+
+
+
+aqui funfa com o pwl gato
+movingPoints = [128   244; 354   232; 177   382; 327   385 ]; 
+
+esse aqui é pro ficinho com pwl gato
+movingPoints = [1947    1196;2573    1159; 2148    1621;  2421    1615];
+
+landmark do chapeuzinho gato3
+movingPoints = [574 290;885 365;1248 497;1299 320;1083 68;723 128];
+
+movingPoints = [%680   186;%713    260;%52    125; %54    216; %4    124; %962    183;  %736    168;  %804    203
+  733    216; 013    166; 812    190; 913    178  ];   
+ 
+landmark gatoFernanda focinho fitgeotrans normal 
+movingPoints = [307   715; 535   730; 427   661; 430   784 ];  
+
+orelha gatoFernanda
+movingPoints = [154   355; 289   322;  559   319;  679   331];
+
+GatoRoberta2
+movingPoints = [557   607;  795   621;  681   553; 693   707 ];
+
