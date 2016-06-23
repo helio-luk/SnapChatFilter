@@ -1,9 +1,9 @@
 -------------------------------------------------FIXEDPOINTS------------------------------------------------------------------
 
-landmarks do rosto humano para focinho gato
+landmarks da japonesa para focinho gato
 fixedPoints  = [120   177; 277   158; 163   308;  282   299]; 
 
-landmark para o chapeuzinho gato3
+landmark da japonesa para o chapeuzinho gato3
 fixedPoints  = [31 162;190 132;363 110;322 23;198 0;74  26]; 
 
 landmark helio com focinho, fitgeotrans normal
@@ -15,7 +15,11 @@ fixedPoints = [194   172; 266   163;365   164;438   182;];
 landmark helio focinho GatoRoberta2
 fixedPoints=[249   386;338   385;290   341; 294   428];
 
+Landmark helio para cachorro1Orelha
+fixedPoints=[199   231; 252   174; 365   179;  415   232 ];
 
+Ladnmark helio para cachorro1Focinho
+fixedPoints=[251   344; 342   340;  293   307;  293   367];
 
 
 ------------------------------------------------------MOVINGPOINTS-----------------------------------------------------------------
@@ -42,4 +46,10 @@ movingPoints = [154   355; 289   322;  559   319;  679   331];
 
 GatoRoberta2
 movingPoints = [557   607;  795   621;  681   553; 693   707 ];
+
+Landmark cachorro1Orelha para helios
+movingPoints = [113   122; 162    91;  231    90; 282   130 ];
+
+Landmak cachorro1Focinho para helio
+movingPoints = [144   255; 243   251;  190   216;  194   268];
 

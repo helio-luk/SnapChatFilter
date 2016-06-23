@@ -1,0 +1,28 @@
+clear all
+close all
+
+
+imagemRosto = imread('imgFace/helio.png');
+mascara     = imread('imgMascara/cachorro1.png');
+imagemFiltro= imread('imgFiltro/cachorro1.png');
+
+
+fixedPoints=[
+   294   331;
+   293   397;
+   230   211;
+   380   199
+    ];
+
+
+
+movingPoints = [
+   106    82;
+   293    82;
+   192   241;
+   188   339
+    ];
+
+x = transformacao(imagemRosto, imagemFiltro, mascara, fixedPoints, movingPoints);
+
+imshow(x);

@@ -46,7 +46,7 @@ ajuste = imwarp(Masc,tform,'OutputView',imref2d(size(ImgOrigH)));
 %ajuste(Ed) = Ifilt(Ed);
 
 
-%imshow(ajuste);
+imshow(ajuste);
 final = zeros(size(ImgOrigH));
 
 [l,c] = size(ImgOrigH);
@@ -60,8 +60,8 @@ for i = 1:l
         end
     end
 end
-K = vision.AlphaBlender;
-final = step(K,ImgOrigH, ajuste );
+
+final = step(H,ImgOrigH,  );
 
 final = uint8(final);
 
