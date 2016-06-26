@@ -3,25 +3,11 @@ close all
 
 
 imagemRosto = imread('imgFace/helio.png');
-mascara     = imread('imgMascara/cachorro1.png');
+mascara     = imread('imgMascara/cachorro1Orelha.png');
 imagemFiltro= imread('imgFiltro/cachorro1.png');
 
-
-fixedPoints=[
-   294   331;
-   293   397;
-   230   211;
-   380   199
-    ];
-
-
-
-movingPoints = [
-   106    82;
-   293    82;
-   192   241;
-   188   339
-    ];
+fixedPoints=[199   231; 252   174; 365   179;  415   232 ];
+movingPoints = [113   122; 162    91;  231    90; 282   130 ];
 
 x = transformacao(imagemRosto, imagemFiltro, mascara, fixedPoints, movingPoints);
 
