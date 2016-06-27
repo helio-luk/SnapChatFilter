@@ -2,21 +2,21 @@ clear all
 close all
 
 
-imagemRosto = imread('imgFace/homem8.jpg');
+imagemRosto = imread('imgFace/avril.jpg');
 mascara     = imread('imgMascara/coelhoFucinho.png');
-imagemFiltro= imread('imgFiltro/coelho.png');
+imagemFiltro= imread('imgFiltro/coelho.pg');
 
-fixedPoints = [490 237; 534 235; 514 219; 514 245];
+fixedPoints = [233 245; 285 214; 235 206; 264 244];
 movingPoints = [204 408; 298 408; 253 378; 254 434]; 
 
-% x = transformacao(imagemRosto, imagemFiltro, mascara, fixedPoints, movingPoints);
+x = transformacao(imagemRosto, imagemFiltro, mascara, fixedPoints, movingPoints);
 
 mascara     = imread('imgMascara/coelhoOrelha.png');
 
-fixedPoints = [456 143; 468 139; 484 139; 526 133; 542 133; 554 137];
+fixedPoints = [128 129; 131 107; 141 78; 196 47; 217 44; 250 51];
 movingPoints = [169 246; 196 237; 223 230; 282 230; 310 235; 330 243];
 
-x = transformacao(imagemRosto, imagemFiltro, mascara, fixedPoints, movingPoints);
+% x = transformacao(imagemRosto, imagemFiltro, mascara, fixedPoints, movingPoints);
 
 mascara     = imread('imgMascara/oculos1m.png');
 imagemFiltro= imread('imgFiltro/oculos1.png');

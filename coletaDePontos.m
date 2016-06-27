@@ -1,8 +1,8 @@
 clear all
 close all
 
-a = imread('imgFiltro/gatoRoberta1.jpg');
-% a = imread('imgFace/grupo2.jpg');
+% a = imread('imgFiltro/gatoRoberta1.jpg');
+a = imread('imgFace/casal8.jpg');
 
 imshow(a);
 [x, y] = getpts;
